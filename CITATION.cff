@@ -1,17 +1,15 @@
 # YAML 1.2
 ---
 cff-version: "1.1.0"
-title: "clld_document_plugin"
+title: "clld-document-plugin"
 authors:
-  -
-    family-names: Matter
+  - family-names: Matter
     given-names: Florian
     orcid: "https://orcid.org/0000-0002-2545-5154"
-date-released: 20??-MM-DD
 version: "0.0.1.dev"
-repository-code: "https://github.com/fmatter/clld-document-plugin"
+date-released: 2022-06-03
+url: "https://github.com/fmatter/clld-document-plugin/releases/tag/0.0.1.dev"
 keywords:
   - clld
-  - linguistics
 message: "If you use this software, please cite it using these metadata."
 license: Apache-2.0
