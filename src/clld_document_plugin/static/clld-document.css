@@ -82,11 +82,10 @@ article {
 
 div#docnav {
     position:fixed;
-    width: 40em;
+    /*width: 40em;*/
     font-size: 90%;
     top: 3.5em;
     right: 1em;
-    z-index:100;
 }
 
 

@@ -2,20 +2,10 @@
 <%namespace name="util" file="../util.mako"/>
 <%from clld_markdown_plugin import markdown%>
 <%! active_menu_item = "documents" %>
-<% ex_cnt = 0 %>
 <link rel="stylesheet" href="${req.static_url('clld_document_plugin:static/clld-document.css')}"/>
 
 
-
-<article>
-% if ctx.chapter_no:
-    <% no_str = f" number={ctx.chapter_no}"%>
-% else:
-    <% no_str = ""%>
-% endif
-
-<h1${no_str}>${ctx.name}</h1>
-<div id="docnav">
+<div id="docnav" class="span4">
     <div id="toc" class="well well-small">
     </div>
     <div class="pagination">
@@ -29,6 +19,16 @@
         </ul>
     </div>
 </div>
+
+
+<article>
+% if ctx.chapter_no:
+    <% no_str = f" number={ctx.chapter_no}"%>
+% else:
+    <% no_str = ""%>
+% endif
+
+<h1${no_str}>${ctx.name}</h1>
 
 ${markdown(request, ctx.description, permalink=False)|n}
 

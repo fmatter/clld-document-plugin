@@ -47,7 +47,6 @@ function get_number_label(counters, level) {
     return output.join(".")
 }
 
-
 //used for storing both section labels and float counters
 var stored = {}
 
