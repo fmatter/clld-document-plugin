@@ -83,7 +83,7 @@ article {
 div#docnav {
     position:fixed;
     /*width: 40em;*/
-    font-size: 90%;
+    /*font-size: 90%;*/
     top: 3.5em;
     right: 1em;
 }
