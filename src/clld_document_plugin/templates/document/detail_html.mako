@@ -3,7 +3,18 @@
 <%from clld_markdown_plugin import markdown%>
 <%! active_menu_item = "documents" %>
 <link rel="stylesheet" href="${req.static_url('clld_document_plugin:static/clld-document.css')}"/>
+<style>
+#top {
+    position: fixed;
+    width: 100%;
+}
+#buffer {
+    min-height: 40px
+}
+</style>
 
+<div id="buffer">
+</div>
 
 <div id="docnav" class="span4">
     <div id="toc" class="well well-small">
