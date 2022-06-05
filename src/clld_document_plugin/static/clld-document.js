@@ -107,7 +107,6 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-
 function number_captions(){
     var captions = document.querySelectorAll("div.caption"); // get all captions
     var kinds = ["table", "figure"] // only these two types for now
@@ -128,7 +127,10 @@ function number_captions(){
 function resolve_crossrefs(){
     var refs = document.querySelectorAll("a.crossref");
     refs.forEach(function(ref, i) {
-        ref.textContent = stored[ref.id]
-        ref.id = null
+        ref.textContent = stored[ref.name]
+        if (ref.hasAttribute("end")) { // for ranges
+            end = ref.getAttribute("end")
+            ref.textContent += "-" + stored[end]
+        }
     })
 }
