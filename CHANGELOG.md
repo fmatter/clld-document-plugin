@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * util for adding or refreshing documents
 
 ### Removed
+* bugs
 
 ### Changed
 * make top navigation bar floating on document view
-
+* non-serif font in `<article>`
+    
 ## [0.0.1] - 2022-06-03
 
 Initial release.

@@ -31,6 +31,9 @@ function number_examples() {
 
 function get_example_label(example_id) {
     ex = document.getElementById(example_id)
+    if (ex == null){
+        return "undefined"
+    }
     parent = ex.parentElement
     if (parent.getAttribute("class") == "subexample") {
         return parent.parentElement.value + String.fromCharCode(96 + ex.value) // convert to alphabetical labels
