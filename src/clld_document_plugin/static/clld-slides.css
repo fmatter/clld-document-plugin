@@ -1,0 +1,94 @@
+#slide-wrapper {
+    color: white;
+    background: black;
+  min-height:100%;
+    height: 100vh;
+    font-size: 2em;
+    padding-top: 1em;
+        overflow:hidden;
+}
+
+#slide-content-wrapper {
+    color: grey ;
+    background: black;
+    height: 90vh;
+    padding: 2em;
+    font-size: 130%;
+    line-height: 300%;
+}
+
+#slide-content-wrapper.pagination a {
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+    color: white;
+  text-align: center;
+}
+
+#slide-wrapper li {
+      margin: 20px 30px;
+}
+
+.sentence-wrapper {
+    line-height: 105%;
+}
+
+.gloss {
+    color: gray;
+}
+
+
+li a.Sentence{
+ text-decoration: none;
+ display: inline;
+ color:  white;
+}
+
+li a.Wordform{
+   color:  gray;
+}
+
+li a.Morph{
+  color: gray;
+}
+
+li a.Morphset{
+  color: gray;
+}
+
+li.pos a{
+    color: orange;
+}
+
+.pagination {
+    width: 100%;
+  text-align: center;
+    background: black;
+}
+
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #5A4181 !Important;
+    border: solid 1px #5A4181 !Important;
+}
+
+.pagination > li > a
+{
+    background-color: black;
+    color: #5A4181;
+}
+
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination li:hover
+{
+    color: #5a5a5a;
+    background-color: red;
+    border-color: #ddd;
+}
