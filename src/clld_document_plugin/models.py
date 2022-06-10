@@ -25,6 +25,8 @@ class Document(Base, IdNameDescriptionMixin):
         backref="following",
     )
 
+    kind = Column(String, default="chapter")
+
     def __str__(self):
         if not self.chapter_no:
             return self.name
