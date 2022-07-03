@@ -21,7 +21,7 @@
 </div>
 
 <% tent = "\n" + ctx.description %>
-<% delim = "\n# " %>
+<% delim = "\n## " %>
 <% parts = tent.split(delim)[1::] %>
 
 % for (i, part) in enumerate(parts):
