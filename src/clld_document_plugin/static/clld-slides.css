@@ -265,7 +265,6 @@ li {
 div.slide {
      color: var(--text);
      min-height: 100vh;
-     /*background: gray;*/
      padding-top: 0.5em;
 }
 
@@ -303,13 +302,9 @@ li a.POS{
 
 .slides-nav {
      position:fixed;
-     top: 3%;
+     top: 4%;
      right: 2%;
-     /*background: red;*/
-     /*display: flex;*/
-     /*align-items: center;*/
-     /*justify-content: center;*/
-}
+ }
 
 h2 {
     font-size: 150% !important;
