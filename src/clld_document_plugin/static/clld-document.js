@@ -32,6 +32,7 @@ function number_examples() {
 function get_example_label(example_id) {
     ex = document.getElementById(example_id)
     if (ex == null){
+        console.log("Could not find example with ID " + example_id);
         return "undefined"
     }
     parent = ex.parentElement
