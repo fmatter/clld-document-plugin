@@ -48,15 +48,9 @@ ${markdown(request, ctx.description, permalink=False)|n}
 
 <script src="${req.static_url('clld_document_plugin:static/clld-document.js')}">
 </script>
-    <script>
-        number_sections()
+<script>
+    number_sections()
+    number_examples()
+    number_captions()
+    resolve_crossrefs()
 </script>
-</script>
-% if ctx.kind == "FIXME":
-    <script>
-        number_sections()
-        number_examples()
-        number_captions()
-        resolve_crossrefs()
-</script>
-%endif
