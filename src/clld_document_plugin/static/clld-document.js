@@ -134,7 +134,7 @@ function resolve_crossrefs(){
         ref.textContent = stored[ref.name]
         if (ref.hasAttribute("end")) { // for ranges
             end = ref.getAttribute("end")
-            ref.textContent += "-" + stored[end]
+            ref.textContent += "–" + stored[end]
         }
     })
 }
