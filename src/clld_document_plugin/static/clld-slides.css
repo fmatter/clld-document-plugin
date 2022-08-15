@@ -245,67 +245,81 @@ Styleguide Nord
 
 
 .slides-wrapper {
-     background: var(--background);
-     min-height:90%;
-     font-size: 2em;
-     overflow:hidden;
-     padding: 2em;
-     line-height: 300%;
+   background: var(--background);
+   min-height:90%;
+   font-size: 2em;
+   overflow:hidden;
+   padding: 2em;
+   line-height: 300%;
 }
 
 .sentence-wrapper {
-     line-height: 100%;
-  margin: 1.2em 0;
+   line-height: 100%;
+   margin: 1.2em 0;
 }
 
 
 li {
-     line-height: 120%;
+   line-height: 120%;
+}
+
+tr {
+   line-height: 110%;
+   white-space: nowrap;
+}
+
+.slide img {
+    max-height: 85vh;
+    width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div.slide {
-     color: var(--text);
-     min-height: 100vh;
-     padding-top: 0.5em;
+   color: var(--text);
+   min-height: 100vh;
+   padding-top: 0.5em;
 }
 
 div.slide a {
-     color: var(--link);
+   color: var(--link);
 }
 
 div.slide em {
-     color: var(--object);
+   color: var(--object);
 }
 
 div.slide em a {
-     color: var(--object);
+   color: var(--object);
 }
 
 li a.Sentence{
- color: var(--object);
+   color: var(--object);
 }
 
 li a.Wordform{
- color: var(--color1);
+   color: var(--color1);
 }
 
 li a.Morph{
- color: var(--color2);
+   color: var(--color2);
 }
 
 li a.Morphset{
- color: var(--color2);
+   color: var(--color2);
 }
 
 li a.POS{
- color: var(--color4);
+   color: var(--color4);
 }
 
 .slides-nav {
-     position:fixed;
-     top: 4%;
-     right: 2%;
- }
+   position:fixed;
+   top: 4%;
+   right: 2%;
+}
 
 h2 {
     font-size: 150% !important;
