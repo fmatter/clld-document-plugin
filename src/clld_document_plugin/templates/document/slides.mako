@@ -38,7 +38,7 @@
     % else:
         <% cl = "slide" %>
     % endif
-    <div id="${tag}" class="${cl}"><h2>${title}</h2>${markdown(request, content, permalink=False)|n}</div>
+    <div id="${tag}" class="${cl}"><div class="slide-title"><h2>${title}</h2></div><div class="slide-content">${markdown(request, content, permalink=False)|n}</div></div>
 
 
 % endfor

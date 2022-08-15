@@ -253,6 +253,11 @@ Styleguide Nord
    line-height: 300%;
 }
 
+.slide-content {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 .sentence-wrapper {
    line-height: 100%;
    margin: 1.2em 0;
@@ -263,9 +268,31 @@ li {
    line-height: 120%;
 }
 
-tr {
+.slide-content tr {
    line-height: 110%;
    white-space: nowrap;
+}
+
+.slide-content td {
+    padding: 1px 10px 1px 1px;
+    margin-left: 10px;
+}
+
+.slide-title{
+    border-color: yellow;
+    /*border-style: solid;*/
+    color: var(--color1);
+    padding-top: 0.5em;
+}
+
+.slide-content{
+        border-color: green;
+    /*border-style: solid;*/
+
+}
+
+.slide-content th {
+    text-align: left;
 }
 
 .slide img {
@@ -277,9 +304,9 @@ tr {
     margin-right: auto;
 }
 
-div.slide {
+div.slide-content {
    color: var(--text);
-   min-height: 100vh;
+   height: 90vh;
    padding-top: 0.5em;
 }
 
@@ -295,23 +322,28 @@ div.slide em a {
    color: var(--object);
 }
 
-li a.Sentence{
+a.Sentence{
    color: var(--object);
 }
 
-li a.Wordform{
+a.Wordform{
    color: var(--color1);
+   font-style: italic;
 }
 
-li a.Morph{
+a.Morph{
    color: var(--color2);
 }
 
-li a.Morphset{
+a.Morphset{
    color: var(--color2);
 }
 
-li a.POS{
+a.POS{
+   color: var(--color4);
+}
+
+a.Language{
    color: var(--color4);
 }
 
