@@ -245,12 +245,12 @@ Styleguide Nord
 
 
 .slides-wrapper {
-   background: var(--background);
-   min-height:90%;
-   font-size: 2em;
-   overflow:hidden;
-   padding: 2em;
-   line-height: 300%;
+ background: var(--background);
+ min-height:90%;
+ font-size: 2em;
+ overflow:hidden;
+ padding: 2em;
+ line-height: 300%;
 }
 
 .slide-content {
@@ -259,18 +259,18 @@ Styleguide Nord
 }
 
 .sentence-wrapper {
-   line-height: 100%;
-   margin: 1.2em 0;
+ line-height: 100%;
+ margin: 1.2em 0;
 }
 
 
 li {
-   line-height: 120%;
+ line-height: 120%;
 }
 
 .slide-content tr {
-   line-height: 110%;
-   white-space: nowrap;
+ line-height: 110%;
+ white-space: nowrap;
 }
 
 .slide-content td {
@@ -280,15 +280,14 @@ li {
 
 .slide-title{
     border-color: yellow;
-    /*border-style: solid;*/
+    border-style: solid;
     color: var(--color1);
     padding-top: 0.5em;
 }
 
 .slide-content{
-        border-color: green;
-    /*border-style: solid;*/
-
+    border-color: green;
+    border-style: solid;
 }
 
 .slide-content th {
@@ -305,52 +304,56 @@ li {
 }
 
 div.slide-content {
-   color: var(--text);
-   height: 90vh;
-   padding-top: 0.5em;
-}
-
-div.slide a {
-   color: var(--link);
+ color: var(--text);
+ height: 90vh;
+ padding-top: 0.5em;
 }
 
 div.slide em {
-   color: var(--object);
+ color: var(--object);
 }
 
 div.slide em a {
-   color: var(--object);
+ color: var(--object);
 }
 
 a.Sentence{
-   color: var(--object);
+ color: var(--object);
 }
 
 a.Wordform{
-   color: var(--color1);
-   font-style: italic;
+ color: var(--object);
+ font-style: italic;
 }
 
 a.Morph{
-   color: var(--color2);
+ color: var(--object);
+ font-style: italic;
 }
 
 a.Morphset{
-   color: var(--color2);
+ color: var(--object);
+ font-style: italic;
 }
 
+a.Cognateset{
+ color: var(--object);
+ font-style: italic;
+}
+
+
 a.POS{
-   color: var(--color4);
+ color: var(--color4);
 }
 
 a.Language{
-   color: var(--color4);
+ color: var(--color0);
 }
 
 .slides-nav {
-   position:fixed;
-   top: 4%;
-   right: 2%;
+ position:fixed;
+ top: 4%;
+ right: 2%;
 }
 
 h2 {
