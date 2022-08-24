@@ -268,6 +268,16 @@ li {
  line-height: 120%;
 }
 
+.slide-content th {
+    border-top:2px solid var(--text);
+    border-bottom:1px solid var(--text);
+}
+
+.slide-content table {
+    border-bottom:1px solid var(--text);
+    margin-top: 1em;   
+}
+
 .slide-content tr {
  line-height: 110%;
  white-space: nowrap;
@@ -280,14 +290,14 @@ li {
 
 .slide-title{
     border-color: yellow;
-    border-style: solid;
+    /*border-style: solid;*/
     color: var(--color1);
     padding-top: 0.5em;
 }
 
 .slide-content{
     border-color: green;
-    border-style: solid;
+    /*border-style: solid;*/
 }
 
 .slide-content th {

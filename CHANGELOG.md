@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * `–` instead of `-` in crossref ranges
 * nicer slides
+* table styling on slides
 
 ### Fixed
 
