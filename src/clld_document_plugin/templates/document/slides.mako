@@ -24,6 +24,22 @@
 <% delim = "\n## " %>
 <% parts = tent.split(delim)[1::] %>
 
+<div id="title" class = "slide active">
+<div class="slide-title"></div>
+    <div class="slide-content">
+        <h1 class="title">${ctx.name}</h1>
+
+% if ctx.meta_data:
+<ul class="metadata">
+    % for k, v in ctx.meta_data.items():
+        <li>${v}</li>
+    % endfor
+</ul>
+%endif
+
+    </div>
+</div>
+
 % for (i, part) in enumerate(parts):
     <% title, content = part.split("\n", 1) %>
     <% tag = re.findall("{#(.*?)}", title) %>
@@ -33,12 +49,7 @@
     % else:
         <% tag = tag[0] %>
     % endif
-    % if i == 0:
-        <% cl = "slide active" %>
-    % else:
-        <% cl = "slide" %>
-    % endif
-    <div id="${tag}" class="${cl}"><div class="slide-title"><h2>${title}</h2></div><div class="slide-content">${markdown(request, content, permalink=False)|n}</div></div>
+    <div id="${tag}" class="slide"><div class="slide-title"><h2>${title}</h2></div><div class="slide-content">${markdown(request, content, permalink=False)|n}</div></div>
 
 
 % endfor

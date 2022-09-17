@@ -243,50 +243,71 @@ Styleguide Nord
   --color4: var(--nord14);
 }
 
+:root {
+  --background: white;
+  --text: var(--nord1);
+  --link: var(--nord12);
+  --object: var(--nord11);
+  --color1: var(--nord10);
+  --color2: var(--nord13);
+  --color3: var(--nord9);
+  --color4: var(--nord14);
+}
+
 
 .slides-wrapper {
- background: var(--background);
- min-height:90%;
- font-size: 2em;
- overflow:hidden;
- padding: 2em;
- line-height: 300%;
+   background: var(--background);
+   min-height:90%;
+   font-size: 2em;
+   overflow:hidden;
+   padding: 2em;
+   line-height: 300%;
+}
+
+.alignment-table{
+    font-size: x-large;
+    min-width: 30vw;
 }
 
 .slide-content {
     display: flex;
     flex-flow: column wrap;
+    color: var(--text);
+    height: 90vh;
+    padding-top: 0.5em;
+    border-color: red;
+    /*border-style: solid;*/
+    font-size: larger;
 }
 
+
 .sentence-wrapper {
- line-height: 100%;
- margin: 1.2em 0;
+   line-height: 100%;
+   margin: 1.2em 0;
 }
 
 
 li {
- line-height: 120%;
+   line-height: 120%;
 }
 
 .slide-content th {
-    border-top:2px solid var(--text);
-    border-bottom:1px solid var(--text);
+    border-top:3px solid var(--text);
+    border-bottom:2px solid var(--text);
 }
 
 .slide-content table {
-    border-bottom:1px solid var(--text);
-    margin-top: 1em;   
-}
+    border-bottom:3px solid var(--text);
+    margin-bottom: 1em;   
+    width: 300px;
+    align-self: center;
+  }
 
 .slide-content tr {
- line-height: 110%;
- white-space: nowrap;
+   line-height: 110%;
+   white-space: nowrap;
 }
 
-.slide-content td {
-    padding: 1px 10px 1px 1px;
-    margin-left: 10px;
-}
 
 .slide-title{
     border-color: yellow;
@@ -295,16 +316,36 @@ li {
     padding-top: 0.5em;
 }
 
-.slide-content{
-    border-color: green;
-    /*border-style: solid;*/
+h1.title{
+    font-size: xxx-large;
+    /*align-self: center;*/
+    margin-top: 40vh;
+    color: var(--color1);
+}
+
+ul.metadata{
+    list-style-type: none;
+    /*align-self: center;*/
+}
+
+.slide-content td {
+    text-align: left;
+    padding: 2px 10px 1px 1px;
+    margin-left: 10px;
+    vertical-align: top;
 }
 
 .slide-content th {
     text-align: left;
+    padding: 2px 10px 1px 1px;
+    margin-left: 10px;
 }
 
-.slide img {
+.smallcaps {
+  font-variant: small-caps;
+}
+
+img {
     max-height: 85vh;
     width: 70%;
     height: auto;
@@ -313,59 +354,62 @@ li {
     margin-right: auto;
 }
 
-div.slide-content {
- color: var(--text);
- height: 90vh;
- padding-top: 0.5em;
-}
 
 div.slide em {
- color: var(--object);
+   color: var(--object);
 }
 
 div.slide em a {
- color: var(--object);
+   color: var(--object);
 }
 
 a.Sentence{
- color: var(--object);
+   color: var(--object);
 }
 
 a.Wordform{
- color: var(--object);
- font-style: italic;
+   color: var(--object);
+   font-style: italic;
 }
 
 a.Morph{
- color: var(--object);
- font-style: italic;
+   color: var(--object);
+   font-style: italic;
 }
 
 a.Morphset{
- color: var(--object);
- font-style: italic;
+   color: var(--object);
+   font-style: italic;
 }
 
 a.Cognateset{
- color: var(--object);
- font-style: italic;
+   color: var(--object);
+   font-style: italic;
 }
 
 
 a.POS{
- color: var(--color4);
+   color: var(--color4);
 }
 
 a.Language{
- color: var(--color0);
+   color: var(--color0);
+}
+
+a.Source{
+    color: var(--color1);
 }
 
 .slides-nav {
- position:fixed;
- top: 4%;
- right: 2%;
+   position:fixed;
+   top: 4%;
+   right: 2%;
 }
 
 h2 {
     font-size: 150% !important;
+}
+
+h3 {
+    font-size: 90% !important;
 }
