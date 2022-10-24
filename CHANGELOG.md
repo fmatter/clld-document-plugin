@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `–` instead of `-` in crossref ranges
 * nicer slides
 * table styling on slides
+* top align table cell contents in "chapter" documents
 
 ### Fixed
 
