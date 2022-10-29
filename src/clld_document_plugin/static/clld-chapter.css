@@ -10,7 +10,6 @@ article tbody {
 article table {
   border-collapse: collapse;*/
 display: inline;
-margin:4px;
 border-spacing: 0px 0px;
 margin: 0 auto;
 }
@@ -19,6 +18,9 @@ article td {
     vertical-align: top;
 }
 
+article th, td {
+    padding: 0.4em;
+}
 ol table {
   border-collapse: collapse;*/
   border-spacing: 0px 0px;

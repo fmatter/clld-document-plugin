@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * nicer slides
 * table styling on slides
 * top align table cell contents in "chapter" documents
+* more table cell padding
 
 ### Fixed
 
