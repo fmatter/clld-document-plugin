@@ -43,7 +43,9 @@ ol tbody {
 }
 
 
-
+html {
+    scroll-padding-top: 40px;
+}
 article {
     width: 50em;
     /*margin: 0 auto;*/

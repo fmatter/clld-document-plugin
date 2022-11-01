@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * more table cell padding
 
 ### Fixed
+* anchors' positions are shifted to adapt to the floating top bar
 
 ## [0.0.3] -- 2022-07-20
 
