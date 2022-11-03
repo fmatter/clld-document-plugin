@@ -11,14 +11,17 @@ def load_session(uri):
     DBSession.configure(bind=sqlalchemy.create_engine(uri))
     return DBSession
 
+
 def add_documents(uri, chapters):
     DBSession = load_session(uri)
     _add_documents(chapters, DBSession)
+
 
 def refresh_documents(uri, chapters):
     DBSession = load_session(uri)
     DBSession.query(Document).delete()
     _add_documents(chapters, DBSession)
+
 
 def _add_documents(chapters, DBSession):
     previous = None
@@ -28,12 +31,12 @@ def _add_documents(chapters, DBSession):
             id=chapter["ID"],
             name=chapter["Name"],
             description=chapter["Description"],
-            chapter_no = int(chapter["Number"]),
-            order = chr(int(chapter["Number"]) + 96)
-            )
+            chapter_no=int(chapter["Number"]),
+            order=chr(int(chapter["Number"]) + 96),
+        )
         if doc.chapter_no > 1:
             doc.preceding = previous
-        
+
         previous = doc
         DBSession.add(doc)
 

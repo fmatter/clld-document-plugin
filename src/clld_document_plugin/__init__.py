@@ -13,6 +13,14 @@ def includeme(config):
     config.registry.settings["mako.directories"].insert(
         1, "clld_document_plugin:templates"
     )
+    config.registry.settings["clld_markdown_plugin"]["extensions"].extend(
+        [
+            "markdown.extensions.md_in_html",
+            "markdown.extensions.attr_list",
+            "markdown.extensions.footnotes",
+            "pymdownx.tilde",
+        ]
+    )
     config.add_static_view("clld-document-plugin-static", "clld_document_plugin:static")
 
     config.register_resource(

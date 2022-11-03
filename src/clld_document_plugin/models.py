@@ -9,6 +9,7 @@ from zope.interface import implementer
 from clld_document_plugin.interfaces import IDocument
 from sqlalchemy import JSON
 
+
 @implementer(IDocument)
 class Document(Base, IdNameDescriptionMixin):
     chapter_no = Column(Integer)
@@ -26,7 +27,7 @@ class Document(Base, IdNameDescriptionMixin):
     )
 
     kind = Column(String, default="chapter")
-    meta_data = Column(JSON) 
+    meta_data = Column(JSON)
 
     def __str__(self):
         if not self.chapter_no:

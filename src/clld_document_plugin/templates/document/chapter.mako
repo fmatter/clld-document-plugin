@@ -24,7 +24,7 @@
 <article class="span7">
 <h1${no_str}>${ctx.name}</h1>
 
-${markdown(request, ctx.description, permalink=False)|n}
+${markdown(request, ctx.description)|n}
 
 
 </article>
