@@ -17,9 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * table styling on slides
 * top align table cell contents in "chapter" documents
 * more table cell padding
+* moved extensions from clld-markdown-plugin
 
 ### Fixed
 * anchors' positions are shifted to adapt to the floating top bar
+* `clld-document.css` is now included in all documents
 
 ## [0.0.3] -- 2022-07-20
 
