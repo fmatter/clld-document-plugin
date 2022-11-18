@@ -31,6 +31,7 @@ glossing_delimiters = [
     r"\\",
 ]
 
+
 def split_word(word):
     parts = re.split(r"([" + "|".join(glossing_delimiters) + "])", word)
     parts = [x for x in parts if x != ""]
@@ -96,6 +97,7 @@ def decorate_gloss_string(input_string, decoration=lambda x: f"\\gl{{{x}}}"):
     gloss_text_upcased = " ".join(words_list)
     return gloss_text_upcased
 
+
 def render_ex(req, objid, table, session, ids=None, subexample=False, **kwargs):
     if "subexample" in kwargs.get("format", []):
         subexample = True
@@ -118,7 +120,7 @@ def render_ex(req, objid, table, session, ids=None, subexample=False, **kwargs):
             )
     sentence = session.query(Sentence).filter(Sentence.id == objid).first()
     if subexample:
-        return render_ex(
+        return rendered_sentence(
             req,
             sentence,
             sentence_link=True,
@@ -127,7 +129,7 @@ def render_ex(req, objid, table, session, ids=None, subexample=False, **kwargs):
         )
     else:
         return HTML.ol(
-            render_ex(
+            rendered_sentence(
                 req,
                 sentence,
                 sentence_link=True,
@@ -154,7 +156,9 @@ def includeme(config):
             "pymdownx.tilde",
         ]
     )
-    config.registry.settings["clld_markdown_plugin"]["renderer_map"]["ExampleTable"] = render_ex
+    config.registry.settings["clld_markdown_plugin"]["renderer_map"][
+        "ExampleTable"
+    ] = render_ex
     config.add_static_view("clld-document-plugin-static", "clld_document_plugin:static")
 
     config.register_resource(
