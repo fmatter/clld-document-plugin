@@ -159,6 +159,10 @@ def includeme(config):
     config.registry.settings["clld_markdown_plugin"]["renderer_map"][
         "ExampleTable"
     ] = render_ex
+    config.registry.settings["clld_markdown_plugin"]["model_map"]["ChapterTable"] = (
+        {"route": "document", "model": models.Document},
+    )
+
     config.add_static_view("clld-document-plugin-static", "clld_document_plugin:static")
 
     config.register_resource(
