@@ -1,5 +1,6 @@
 from clld.db.meta import Base
 from clld.db.models.common import IdNameDescriptionMixin
+from sqlalchemy import JSON
 from sqlalchemy import Column
 from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
@@ -7,7 +8,6 @@ from sqlalchemy import String
 from sqlalchemy.orm import relationship
 from zope.interface import implementer
 from clld_document_plugin.interfaces import IDocument
-from sqlalchemy import JSON
 
 
 @implementer(IDocument)

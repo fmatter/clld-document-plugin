@@ -1,8 +1,9 @@
-from clld_document_plugin.models import Document
-from sqlalchemy.orm import scoped_session, sessionmaker
-import zope.sqlalchemy
 import sqlalchemy
 import transaction
+import zope.sqlalchemy
+from sqlalchemy.orm import scoped_session
+from sqlalchemy.orm import sessionmaker
+from clld_document_plugin.models import Document
 
 
 def load_session(uri):

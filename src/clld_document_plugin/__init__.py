@@ -1,12 +1,13 @@
 """Top-level package for clld-document-plugin."""
-from clld_document_plugin import interfaces
-from clld_document_plugin import models
-from clld_document_plugin import datatables
+import re
+from clld.db.models import Sentence
 from clld.web.util.htmllib import HTML
-from clld.db.models import Sentence, common
 from clld_corpus_plugin.util import rendered_sentence
 from markdown.extensions.toc import TocExtension
-import re
+from clld_document_plugin import datatables
+from clld_document_plugin import interfaces
+from clld_document_plugin import models
+
 
 __author__ = "Florian Matter"
 __email__ = "florianmatter@gmail.com"
@@ -98,7 +99,9 @@ def decorate_gloss_string(input_string, decoration=lambda x: f"\\gl{{{x}}}"):
     return gloss_text_upcased
 
 
-def render_ex(req, objid, table, session, ids=None, subexample=False, **kwargs):
+def render_ex(
+    req, objid, table, session, ids=None, subexample=False, **kwargs
+):  # pylint: disable=too-many-arguments
     if "subexample" in kwargs.get("format", []):
         subexample = True
     example_id = kwargs.get("example_id", [None])[0]
@@ -127,19 +130,18 @@ def render_ex(req, objid, table, session, ids=None, subexample=False, **kwargs):
             counter_class="subexample",
             in_context=True,
         )
-    else:
-        return HTML.ol(
-            rendered_sentence(
-                req,
-                sentence,
-                sentence_link=True,
-                in_context=True,
-                example_id=example_id,
-                counter_class="example",
-                title=title,
-            ),
-            class_="example",
-        )
+    return HTML.ol(
+        rendered_sentence(
+            req,
+            sentence,
+            sentence_link=True,
+            in_context=True,
+            example_id=example_id,
+            counter_class="example",
+            title=title,
+        ),
+        class_="example",
+    )
 
 
 def includeme(config):
