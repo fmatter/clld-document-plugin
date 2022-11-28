@@ -11,7 +11,7 @@ from clld_document_plugin import models
 
 __author__ = "Florian Matter"
 __email__ = "florianmatter@gmail.com"
-__version__ = "0.0.4"
+__version__ = "0.0.5.dev"
 
 glossing_delimiters = [
     "-",
