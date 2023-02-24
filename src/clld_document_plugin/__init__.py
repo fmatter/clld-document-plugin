@@ -1,12 +1,15 @@
 """Top-level package for clld-document-plugin."""
 import re
 from clld.db.models import Sentence
+from clld.db.models import common
 from clld.web.util.htmllib import HTML
+from clld.web.util.helpers import link
 from clld_corpus_plugin.util import rendered_sentence
 from markdown.extensions.toc import TocExtension
 from clld_document_plugin import datatables
 from clld_document_plugin import interfaces
 from clld_document_plugin import models
+from clld_markdown_plugin import link_entity
 
 
 __author__ = "Florian Matter"
@@ -98,6 +101,18 @@ def decorate_gloss_string(input_string, decoration=lambda x: f"\\gl{{{x}}}"):
     gloss_text_upcased = " ".join(words_list)
     return gloss_text_upcased
 
+def render_sources(req, objid, table, session, ids=None, **kwargs):
+    if "full" in kwargs:
+        source = session.query(common.Source).filter(common.Source.id == objid)[0]
+        return link(req, source, label=source.bibtex().text())
+    return link_entity(
+                        req,
+                        objid,
+                        "source",
+                        common.Source,
+                        session,
+                    )
+
 
 def render_ex(
     req, objid, table, session, ids=None, subexample=False, **kwargs
@@ -144,6 +159,12 @@ def render_ex(
     )
 
 
+def render_abbrev_list(req, objid, table, session, ids=None, **kwargs):
+    abbrev_items = []
+    for abbrev in session.query(common.GlossAbbreviation).all():
+        abbrev_items.append(HTML.tr(HTML.td(abbrev.id), HTML.td(abbrev.name)))
+    return HTML.table(HTML.tbody(*abbrev_items), **{"class": "table table-nonfluid"})
+
 def includeme(config):
 
     config.registry.settings["mako.directories"].insert(
@@ -165,6 +186,11 @@ def includeme(config):
         "route": "document",
         "model": models.Document,
     }
+
+    config.registry.settings["clld_markdown_plugin"]["renderer_map"]["abbreviations.csv"] = render_abbrev_list
+
+    config.registry.settings["clld_markdown_plugin"]["renderer_map"]["sources.bib"] = render_sources
+    config.registry.settings["clld_markdown_plugin"]["renderer_map"]["Source"] = render_sources
 
     config.add_static_view("clld-document-plugin-static", "clld_document_plugin:static")
 
