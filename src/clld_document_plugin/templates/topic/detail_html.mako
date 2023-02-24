@@ -16,7 +16,7 @@
             <td>Discussed in:</td>
         <td><ul>
             % for ref in ctx.references:
-                <li><a href='/documents/${ref.document.id}#${ref.section}' class='crossref' name='$' >${ref.label}</a</li>
+                <li><a href='/documents/${ref.document.id}#${ref.section}' name='$' >${ref.label}</a</li>
             % endfor
         </ul></td>
         </tr>
