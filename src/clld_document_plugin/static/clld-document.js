@@ -16,7 +16,7 @@ function number_examples() {
     exrefs.forEach(function(x, i) {
         example_id = x.getAttribute("example_id")
         x.setAttribute("href", "#" + example_id) // point the link to the example
-        x.textContent = "("+get_example_label(example_id) // get_example_label returns labels like 1 or 2b
+        x.textContent = get_example_label(example_id) // get_example_label returns labels like 1 or 2b
         if (x.hasAttribute("end")) { // for exrefs of the form (10-12)
             end = x.getAttribute("end")
             x.textContent += "-" + get_example_label(end)
@@ -24,7 +24,9 @@ function number_examples() {
         if (x.hasAttribute("suffix")) { // for exrefs of the form (10a-b)
             x.textContent += x.getAttribute("suffix")
         }
-        x.textContent += ")" // wrap it up
+        if (!x.hasAttribute("bare")) {
+            x.textContent = "(" + x.textContent + ")" // wrap it up in parentheses (or not!)
+        }
     });
 }
 
