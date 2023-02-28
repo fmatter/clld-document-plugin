@@ -49,7 +49,7 @@
     % else:
         <% tag = tag[0] %>
     % endif
-    <div id="${tag}" class="slide"><div class="slide-title"><h2>${title}</h2></div><div class="slide-content">${markdown(request, content, permalink=False)|n}</div></div>
+    <div id="${tag}" class="slide"><div class="slide-title"><h2>${title}</h2></div><div class="slide-content">${markdown(request, content)|n}</div></div>
 
 
 % endfor

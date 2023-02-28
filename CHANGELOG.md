@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * anchors' positions are shifted to adapt to the floating top bar
 * `clld-document.css` is now included in all documents
 * `.js` in MANIFEST.in
+* slides markdown
 
 ## [0.0.3] -- 2022-07-20
 
