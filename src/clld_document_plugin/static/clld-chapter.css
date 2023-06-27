@@ -9,9 +9,9 @@ article tbody {
 
 article table {
   border-collapse: collapse;*/
-display: inline;
-border-spacing: 0px 0px;
-margin: 0 auto;
+  display: inline;
+  border-spacing: 0px 0px;
+  margin: 0 auto;
 }
 
 article td {
@@ -20,13 +20,15 @@ article td {
 
 article th, td {
     padding: 0.1em;
+    padding-inline: 0.3em;
 }
+
 ol table {
   border-collapse: collapse;*/
   border-spacing: 0px 0px;
-display: inline;
-margin:4px;
-margin: 0 auto;
+  display: inline;
+  margin:4px;
+  margin: 0 auto;
 }
 
 ol thead {
@@ -42,10 +44,10 @@ ol tbody {
     border-bottom: 0px;
 }
 
-
 html {
     scroll-padding-top: 40px;
 }
+
 article {
     width: 50em;
     /*margin: 0 auto;*/
@@ -66,13 +68,14 @@ div#docnav {
 }
 
 
-
 article h1 {
   font-size: 1.5em;
 }
+
 article h2 {
   font-size: 1.17em !important;
 }
+
 article h3 {
   font-size: 1em;
 }
@@ -80,7 +83,7 @@ article h3 {
 div.caption {
     display: table;
     margin: auto;
-text-align: center;
+    text-align: center;
 }
 
 
