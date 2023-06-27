@@ -1,4 +1,4 @@
-function number_examples() {
+function numberExamples() {
     var examples = document.querySelectorAll("li.example"); // select all examples
     for (var exc = 0; exc < examples.length; exc++) {
         ex = examples[exc]
@@ -16,10 +16,10 @@ function number_examples() {
     exrefs.forEach(function(x, i) {
         example_id = x.getAttribute("example_id")
         x.setAttribute("href", "#" + example_id) // point the link to the example
-        x.textContent = get_example_label(example_id) // get_example_label returns labels like 1 or 2b
+        x.textContent = getExampleLabel(example_id) // getExampleLabel returns labels like 1 or 2b
         if (x.hasAttribute("end")) { // for exrefs of the form (10-12)
             end = x.getAttribute("end")
-            x.textContent += "-" + get_example_label(end)
+            x.textContent += "-" + getExampleLabel(end)
         }
         if (x.hasAttribute("suffix")) { // for exrefs of the form (10a-b)
             x.textContent += x.getAttribute("suffix")
@@ -31,7 +31,7 @@ function number_examples() {
 }
 
 
-function get_example_label(example_id) {
+function getExampleLabel(example_id) {
     ex = document.getElementById(example_id)
     if (ex == null){
         console.log("Could not find example with ID " + example_id);
@@ -45,7 +45,7 @@ function get_example_label(example_id) {
 }
 
 // returns strings like 3. or 4.3.2
-function get_number_label(counters, level) {
+function getNumberLabel(counters, level) {
     output = []
     for (var i = 2; i <= level; i++) {
         output.push(counters["h"+i])
@@ -56,7 +56,7 @@ function get_number_label(counters, level) {
 //used for storing both section labels and float counters
 var stored = {}
 
-function number_sections(){
+function numberSections(){
     var toc = document.getElementById("toc") // get the table of contents
     var counters = {}; // initialize counters for every heading level except h1 (below)
     var levels = ["h2", "h3", "h4", "h5", "h6"];
@@ -83,7 +83,7 @@ function number_sections(){
     headings.forEach(function(heading, i) {
         var level = heading.tagName.toLowerCase();
         counters[level] += 1
-        number = get_number_label(counters, level.charAt(level.length - 1)) // the formatted X.Y.Z counter
+        number = getNumberLabel(counters, level.charAt(level.length - 1)) // the formatted X.Y.Z counter
         heading.textContent = prefix + number + ". " + heading.textContent
 
         toclink = document.createElement('a') // insert links into the TOC
@@ -113,8 +113,9 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function number_captions(){
+function numberCaptions(){
     var captions = document.querySelectorAll("div.caption"); // get all captions
+    var figcaptions = document.querySelectorAll("figcaption"); // get all captions
     var kinds = ["table", "figure"] // only these two types for now
     var counters = {"table": 0, "figure": 0}
     captions.forEach(function(caption, i) {
@@ -123,14 +124,22 @@ function number_captions(){
                 counters[kind] += 1
                 ref_counter = capitalizeFirstLetter(kind) + " " + counters[kind];
                 caption.textContent = ref_counter + ": " + caption.textContent
-                stored[caption.id] = ref_counter // store the value for resolve_crossrefs below
+                stored[caption.id] = ref_counter // store the value for resolveCrossrefs below
             }
         });
     });
+    figcaptions.forEach(function(caption, i) {
+        counters["figure"] += 1
+        ref_counter = capitalizeFirstLetter("figure") + " " + counters["figure"];
+        if (!caption.textContent.startsWith(ref_counter + ": ")){
+            caption.textContent = ref_counter + ": " + caption.textContent
+        }
+        stored[caption.id] = ref_counter // store the value for resolveCrossrefs below
+    })
 }
 
 // iterate all a.crossref and insert the calculated values; for floats and sections
-function resolve_crossrefs(){
+function resolveCrossrefs(){
     var refs = document.querySelectorAll("a.crossref");
     refs.forEach(function(ref, i) {
         ref.textContent = stored[ref.name]

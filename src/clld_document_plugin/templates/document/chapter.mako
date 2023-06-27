@@ -49,8 +49,8 @@ ${markdown(request, ctx.description)|n}
 <script src="${req.static_url('clld_document_plugin:static/clld-document.js')}">
 </script>
 <script>
-    number_sections()
-    number_examples()
-    number_captions()
-    resolve_crossrefs()
+    numberSections()
+    numberExamples()
+    numberCaptions()
+    resolveCrossrefs()
 </script>
