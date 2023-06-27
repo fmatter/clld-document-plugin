@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * migrated example rendering from yawarana grammar
 * `bare` argument for `exref`
+* topics
 
 ### Changed
 * `–` instead of `-` in crossref ranges
