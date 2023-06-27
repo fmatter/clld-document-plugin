@@ -14,7 +14,7 @@ from clld_markdown_plugin import link_entity
 
 __author__ = "Florian Matter"
 __email__ = "florianmatter@gmail.com"
-__version__ = "0.0.5.dev"
+__version__ = "0.0.5"
 
 glossing_delimiters = [
     "-",
